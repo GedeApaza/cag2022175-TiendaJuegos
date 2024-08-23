@@ -110,4 +110,13 @@ public function registrarAdmin(Request $request)
 
     return redirect()->route('dashboard')->with('success', 'Administrador registrado correctamente.');
 }
+public function dashboard()
+{
+    return view('admin.dashboard');
+}
+        //todo: admin logout functionality
+public function logout(){
+    Auth::guard('admin')->logout();
+    return redirect()->route('login.form');
+}
 }

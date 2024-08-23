@@ -19,10 +19,10 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        \App\Models\Admin::create([
-            'nombres' => 'German',
+        \App\Models\Cliente::create([
+            'nombres' => 'Dylan',
             'apellidos' => 'Garmendia',
-            'email' => 'german@gmail.com',
+            'email' => 'dylan@gmail.com',
             'password' => Hash::make('12345678'),
             'foto_perfil'=>'Fotos/fotosimple.jpg',
             'celular' => '41325456',

@@ -10,6 +10,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Cliente extends Authenticatable
 {
     use HasFactory;
+    protected $table = 'cliente'; // Especifica el nombre de la tabla en singular
+
     protected $fillable = [
         'nombres',
         'apellidos',

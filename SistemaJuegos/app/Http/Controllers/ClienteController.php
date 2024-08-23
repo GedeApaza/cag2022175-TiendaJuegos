@@ -52,7 +52,7 @@ class ClienteController extends Controller
             // Restablecemos los intentos fallidos después de una autenticación exitosa.
             $this->limiter->clear($this->throttleKey($request));
     
-            return redirect()->intended('dashboard');
+            return redirect()->intended('/cliente/dashboard');
         }
     
         // Registramos un intento fallido.
@@ -68,4 +68,13 @@ class ClienteController extends Controller
         // La clave de bloqueo se compone del email y la IP del usuario.
         return mb_strtolower($request->input('email')) . '|' . $request->ip();
     }
+    public function dashboard()
+{
+    return view('cliente.dashboard');
+}
+        //todo: admin logout functionality
+public function logout(){
+    Auth::guard('cliente')->logout();
+    return redirect()->route('cliente.login.form');
+}
 }
